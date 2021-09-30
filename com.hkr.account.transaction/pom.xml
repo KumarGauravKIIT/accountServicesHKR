@@ -11,7 +11,7 @@
 	<groupId>com.hkr.account</groupId>
 	<artifactId>com.hkr.account.transaction</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>com.hkr.account.transaction</name>
+	<name>account-transaction</name>
 	<description>Spring Boot Project for Money transaction from one Account to another account</description>
 	<properties>
 		<java.version>1.8</java.version>
