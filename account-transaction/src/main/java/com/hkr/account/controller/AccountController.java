@@ -7,17 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 
+
+import javax.transaction.Transactional;
+
 @RestController
+@Transactional
 public class AccountController {
 
 
     @Autowired
     FundTransferService fundTransferService;
 
-    @GetMapping("/transfer-fund-from-{accountFrom}-to-{accountTo}-{amount}")
-    public Transaction transferFundFromAccountToAnotherAccount(@PathVariable int accountFrom, @PathVariable int accountTo, @PathVariable double amount){
+    @PostMapping("/transfer-fund")
+    public Transaction transferFundFromAccountToAnotherAccount(@RequestBody Transaction transaction){
 
-        return fundTransferService.transferFund(accountFrom, accountTo, amount);
+        return fundTransferService.transferFund(transaction);
 
 
     }
