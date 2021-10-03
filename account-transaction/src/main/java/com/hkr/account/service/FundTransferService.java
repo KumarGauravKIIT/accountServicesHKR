@@ -19,10 +19,6 @@ public class FundTransferService {
     @Autowired
     AccountRepository repository;
 
-
-    Map<Integer, Account> accountsMap = new HashMap<Integer, Account>();
-//    Map<Integer, Account> accountToMap = new HashMap<Integer, Account>();
-
       public Transaction transferFund(Transaction transaction){
 
         Long accountFromId = 0L;
@@ -50,7 +46,7 @@ public class FundTransferService {
                     from.setBalance(from.getBalance() - amount);
                     to.setBalance(to.getBalance() + amount);
                 }else{
-
+                    
                 }
 
                 repository.save(from);

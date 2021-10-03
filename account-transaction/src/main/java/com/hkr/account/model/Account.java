@@ -21,6 +21,15 @@ public class Account {
     @Id
     private Long accId;
 
+    @Column(name="acc_type")
+    private String accType;
+
+    @Column(name="acc_holder_name")
+    private String accHolderName;
+
+    @Column(name="acc_balance")
+    private Double balance;
+
     public Long getAccId() {
         return accId;
     }
@@ -52,14 +61,5 @@ public class Account {
     public void setBalance(Double balance) {
         this.balance = balance;
     }
-
-    @Column(name="acc_type")
-    private String accType;
-
-    @Column(name="acc_holder_name")
-    private String accHolderName;
-
-    @Column(name="acc_balance")
-    private Double balance;
 
 }
